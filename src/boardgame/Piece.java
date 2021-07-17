@@ -7,11 +7,11 @@ public class Piece {
 	
 	public Piece(Board board) {
 		this.board = board;
-		position = null;
+		position = null; // USADO APENAS PARA ENFATIZAR Q POSTION É POR PADRAO NULO
 		
 	}
 
-	protected Board getBoard() {
+	protected Board getBoard() { //LOCALIZAÇÃO DA PEÇA DENTRO DO TABULEIRO
 		return board;
 	}
 
