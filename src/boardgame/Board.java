@@ -36,6 +36,11 @@ public class Board {
 		return pieces[position.getRow()][position.getColumn()]; // RETORNA A LOCALIZAÇÃO
 	}
 	
+	public void placePiece(Piece piece, Position position) { //COLAR PEÇAS NO TABULEIRO
+		pieces[position.getRow()][position.getColumn()] = piece;
+		piece.position = position;
+	}
+	
 	
 	
 }

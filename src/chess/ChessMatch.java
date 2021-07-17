@@ -1,6 +1,9 @@
 package chess;
 
 import boardgame.Board;
+import boardgame.Position;
+import chess.pieces.King;
+import chess.pieces.Rook;
 
 public class ChessMatch {//CORAÇÃO DO SISTEMA
 	
@@ -8,6 +11,7 @@ public class ChessMatch {//CORAÇÃO DO SISTEMA
 	
 	public ChessMatch() { //CRIANDO PARTIDA DE TABULEIRO
 		board = new Board(8, 8);
+		initialSetup();
 	}
 	
 	public ChessPiece[][] getPieces(){//RETORNA A MATRIZ DE PEÇAS DE XADREZ CORRESPONDENTE A PARTIDA
@@ -22,5 +26,12 @@ public class ChessMatch {//CORAÇÃO DO SISTEMA
 		}
 		return mat;
 	}
+	
+	private void initialSetup() { //METODO RESPONSAVEL POR COLOCAR AS PEÇAS NO TABUELIRO
+		board.placePiece(new Rook(board, Color.WHITE), new Position(2, 1));
+		board.placePiece(new King(board, Color.BLACK), new Position(0, 4));
+		board.placePiece(new King(board, Color.WHITE), new Position(7, 4));
+	}
 
+	
 }
